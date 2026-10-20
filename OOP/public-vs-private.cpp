@@ -23,6 +23,25 @@ class Car
             cout << "Year: " << year << endl;
 
         }
+
+        /*
+        Setter and Getter
+        - Setter: changes a private variable.
+        - Getter: returns the value of a private variable.
+        */
+
+        void setYear(int y)     //setter
+        {
+            if (y > 0)
+            {
+                year = y;
+            }
+        }
+
+        int getYear()           //getter
+        {
+            return year;
+        }
 };
 
 int main()
@@ -34,5 +53,10 @@ int main()
     c1.display();
     c2.display();
 
+    c1.setYear(2030);
+    cout << "Updated year of c1: " << c1.getYear() << endl;
+
+    c1.display();
+    
     return 0;
 }
