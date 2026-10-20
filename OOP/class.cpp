@@ -24,7 +24,7 @@ int main()
     c1.brand = "Toyota";    //The dot (.) operator accesses a member of an object.
     c1.year = 2022;
 
-    c1.display();           //s1.display() calls the object's member function.
+    c1.display();           //c1.display() calls the object's member function.
 
     return 0;
 }
