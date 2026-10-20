@@ -10,7 +10,7 @@ class Car
         string brand;   //data member
         int year;       //data member
 
-        Car(string b, int y)
+        Car(string b, int y)    //constructor - It is a special member function that runs automatically when an object is created.
         {
             brand = b;
             year = y;
