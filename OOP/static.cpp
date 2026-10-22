@@ -29,11 +29,17 @@ class Car
             count++;
         }
 
+        ~Car()      //destructor
+        {
+            count--;
+        }
+
         void display()
         {
             cout << "Brand: " << brand << endl;
             cout << "Year: " << year << endl;
         }
+
 };
 int Car::count = 0;     //defines the static variable and initializes it to zero.
 
@@ -43,12 +49,18 @@ int main()
     Car c2("Honda", 2024);
     Car c3("Ferrari", 2026);
 
-    c1.display();
-    c2.display();
-    c3.display();
+    Car::showCount();       //3
 
-    cout << "No. of cars created: ";
-    Car::showCount();
+    {
+        // Start of a separate block
+
+        Car c4("BMW", 2025);
+        Car::showCount();   //4
+
+        // End of block: c4 is destroyed automatically
+    }
+
+    Car::showCount();       //3
     
     return 0;
 }
