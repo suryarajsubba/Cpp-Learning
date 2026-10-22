@@ -28,7 +28,15 @@ class Car
             this->brand = brand;
             this->year = year;
         }
+
+    /*
+        //we can also use initialiser lists.
+        //Both approaches are valid; initializer lists are generally preferred for initializing members.
         
+        Car(string brand, int year) : brand(brand), year(year)
+        {
+        }
+    */
         void display()
         {
             cout << "Brand: " << brand << endl;
