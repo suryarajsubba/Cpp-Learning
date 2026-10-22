@@ -14,10 +14,17 @@ class Vehicle
             cout << "Year: " << year << endl;
         }
 
+        //constructor
         Vehicle(string b, int y)
         {
             brand = b;
             year = y;
+        }
+
+        //destructor
+        ~Vehicle()
+        {
+            cout << "Vehicle destructor called" << endl;
         }
 };
 
@@ -36,6 +43,12 @@ class Bike : public Vehicle     //class Bike inherits features of class Vehicle
         //constructor
         Bike(string b, int y, int n) : Vehicle(b,y), engineCC(n)    //constructor initializer list
         {
+        }
+
+        //destructor
+        ~Bike()
+        {
+            cout << "Bike destructor called" << endl;
         }
 };
 
