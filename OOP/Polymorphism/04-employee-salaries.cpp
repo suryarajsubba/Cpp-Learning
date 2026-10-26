@@ -59,11 +59,15 @@ int main()
     FullTimeEmployee f1("Alex", 40000);
     PartTimeEmployee p1("Sam", 80, 200);
 
-    cout<<"Employee: "<<f1.name<<endl;
-    cout<<"Monthly Salary: "<<f1.calculateSalary()<<endl;
+    Employee *ptr;      //base class pointer
+
+    ptr = &f1;
+    cout<<"Employee: "<<ptr->name<<endl;
+    cout<<"Monthly Salary: "<<ptr->calculateSalary()<<endl;
     
-    cout<<endl<<"Employee: "<<p1.name<<endl;
-    cout<<"Monthly Salary: "<<p1.calculateSalary()<<endl;
+    ptr = &p1;
+    cout<<endl<<"Employee: "<<ptr->name<<endl;
+    cout<<"Monthly Salary: "<<ptr->calculateSalary()<<endl;
 
     return 0;
 }
