@@ -6,7 +6,6 @@ int main()
 {
     for (int i = 1; i <= 1000; i++)
     {
-        int original = i;
         int num = i;
         
         // Count the number of digits
@@ -23,21 +22,21 @@ int main()
         int sum = 0;
         while (num > 0)
         {
-            int digit = num % 10;
-            int power = pow(digit,total_digits);
+            int last_digit = num % 10;
+            int power = pow(last_digit, total_digits);
 
             // for (int j = 1; j <= total_digits; j++)      //if we don't use pow() function
             // {
-            //     power = power * digit;
+            //     int power = power * last_digit;
             // }
 
             sum += power;
             num = num / 10;
         }
 
-        if (sum == original)
+        if (sum == i)
         {
-            cout << original << endl;
+            cout << i << endl;
         }
     }
 
