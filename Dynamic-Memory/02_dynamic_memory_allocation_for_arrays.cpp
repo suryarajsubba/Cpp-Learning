@@ -28,8 +28,30 @@ int main()
     {
         cout << arr[i] << endl;
     }
-    //prints sum
+    //print sum
     cout << "Sum: " << sum << endl;
+    
+    //find largest element
+    int largest = arr[0];
+    for (int i=0; i<n; i++)
+    {
+        if (arr[i]>largest)
+        {
+            largest = arr[i];
+        }
+    }
+    cout << "Largest: " << largest << endl;
+    
+    //find smallest element
+    int smallest = arr[0];
+    for (int i=0; i<n; i++)
+    {
+        if (arr[i]<smallest)
+        {
+            smallest = arr[i];
+        }
+    }
+    cout << "Smallest: " << smallest << endl;
 
     delete[] arr;
     arr = nullptr;
