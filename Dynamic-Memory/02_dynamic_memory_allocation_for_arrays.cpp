@@ -3,23 +3,33 @@ using namespace std;
 
 int main()
 {
-    int *arr = new int[5];
+    int n;  //number of integers
+    int sum = 0; //sum of all integers
+
+    cout<<"How many integers do you want to store? ";
+    cin>>n;
+
+    int *arr = new int[n];
 
     //int *arr - Declares a pointer to an integer.
-    //new int[5] - Dynamically allocates memory for 5 integers.
+    //new int[n] - Dynamically allocates memory for n integers.
     //arr - Stores the address of the first element.
 
-    //we can access the elements just like an ordinary array
-    arr[0] = 10;
-    arr[1] = 20;
-    arr[2] = 30;
-    arr[3] = 40;
-    arr[4] = 50;
-    
-    for (int i=0; i<5; i++)
+    //user input
+    for (int i=0; i<n; i++)
     {
-        cout<<arr[i]<<endl;
+        cout << "Enter integer: ";
+        cin >> arr[i];    //we can access the elements just like an ordinary array
+        sum += arr[i];
     }
+    
+    //print all the integers
+    for (int i=0; i<n; i++)
+    {
+        cout << arr[i] << endl;
+    }
+    //prints sum
+    cout << "Sum: " << sum << endl;
 
     delete[] arr;
     arr = nullptr;
