@@ -11,20 +11,28 @@ int main()
     cout << "Enter a number: ";
     cin >> n;
 
-    // count the total occurences
+    // count the total occurrences
     int total = count(numbers.begin(), numbers.end(), n);
 
     if (total != 0)     // if number found
     {
-        // print the total occurences
+        // print the total occurrences
         cout << "Count: " << total << endl;
 
-        // find the index of first ocurrence
-        auto it = find(numbers.begin(), numbers.end(), n);
-        int index = it - numbers.begin();
-        cout << "Index of first ocurrence: " << index << endl;
+        // find the indexes of all the occurrences
+        auto it = numbers.begin();
+        while (it != numbers.end())
+        {
+            it = find(it, numbers.end(), n);
+
+            if (it != numbers.end())    // check whether a match was actually found before printing its index.
+            {
+                cout << "Found at index: " << it - numbers.begin() << endl;
+                it++;
+            }
+        }
     }
-    else                // if number not found
+    else        // if number not found
     {
         cout << "Element not found!" << endl;
     }
