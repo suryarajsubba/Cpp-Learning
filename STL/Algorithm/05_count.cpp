@@ -18,19 +18,6 @@ int main()
     {
         // print the total occurrences
         cout << "Count: " << total << endl;
-
-        // find the indexes of all the occurrences
-        auto it = numbers.begin();
-        while (it != numbers.end())
-        {
-            it = find(it, numbers.end(), n);
-
-            if (it != numbers.end())    // check whether a match was actually found before printing its index.
-            {
-                cout << "Found at index: " << it - numbers.begin() << endl;
-                it++;
-            }
-        }
     }
     else        // if number not found
     {

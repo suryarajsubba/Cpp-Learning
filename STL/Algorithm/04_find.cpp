@@ -5,24 +5,29 @@ using namespace std;
 
 int main()
 {
-    vector<int> numbers = {15, 30, 45, 60, 75, 90, 30};
+    vector<int> numbers = {15, 30, 45, 60, 30, 75, 45, 90, 30};
 
-    int n;      // number that we want to search
+    int n; // number that we want to search
     cout << "Enter the number to be searched: ";
     cin >> n;
 
-    // search the number
-    auto it = find(numbers.begin(), numbers.end(), n);  // 'it' is the iterator that points to searched number 
+    // find the indexes of all the occurrences
+    bool found = false;
+    auto it = numbers.begin();
+    while (it != numbers.end())
+    {
+        it = find(it, numbers.end(), n);
 
-    if (it != numbers.end())
-    {
-        cout << "Element found!" << endl;
-        int index = it - numbers.begin();   // When you subtract two compatible random-access iterators belonging to the same vector, C++ gives you the number of elements between them, not the difference between their values.
-        cout << "The element " << n << " is at index " << index << endl;
+        if (it != numbers.end()) // check whether a match was actually found before printing its index.
+        {
+            found = true;
+            cout << "Found at index: " << it - numbers.begin() << endl;
+            it++;
+        }
     }
-    else
+    if (!found)
     {
-        cout << "Element not found!" << endl;
+        cout << "Number not found" << endl;
     }
 
     return 0;
