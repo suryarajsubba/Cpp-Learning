@@ -9,36 +9,15 @@ int main()
 
     // Are all numbers even?
     bool even = all_of(numbers.begin(), numbers.end(), [](int n){return n%2==0;});
-    if (even)
-    {
-        cout << "All numbers even? " << "Yes" << endl;
-    }
-    else
-    {
-        cout << "All numbers even? " << "No" << endl;
-    }
+    cout << "All numbers even? " << (even ? "Yes" : "No") << endl;
 
     // Is there any number greater than 50?
     bool greater_than_50 = any_of(numbers.begin(), numbers.end(), [](int n){return n>50;});
-    if (greater_than_50)
-    {
-        cout << "Any number greater than 50? " << "Yes" << endl;
-    }
-    else
-    {
-        cout << "Any number greater than 50? " << "No" << endl;
-    }
+    cout << "Any number greater than 50? " << (greater_than_50 ? "Yes" : "No") << endl;
 
     // Are there no negative numbers?
     bool no_negative = none_of(numbers.begin(), numbers.end(), [](int n){return n<0;});
-    if (no_negative)
-    {
-        cout << "No negative numbers? " << "Yes" << endl;
-    }
-    else 
-    {
-        cout << "No negative numbers? " << "No" << endl;
-    }
+    cout << "No negative numbers? " << (no_negative ? "Yes" : "No") << endl;
     
     return 0;
 }
