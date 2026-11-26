@@ -2,18 +2,16 @@
 
 int main()
 {
-    for (int i=0; i<5; i++)
+    int n;  // no. of rows
+
+    std::cout << "Enter number of rows: ";
+    std::cin >> n;
+
+    for (int i=0; i<n; i++)
     {
-        for (int j=0; j<5; j++)
+        for (int j=0; j<=i; j++)
         {
-            if (j<=i)
-            {
-                std::cout << "*";
-            }
-            else 
-            {
-                std::cout << " ";
-            }
+            std::cout << "*";
         }
         std::cout << "\n";
     }
